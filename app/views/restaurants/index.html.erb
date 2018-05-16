@@ -1,0 +1,12 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,91,118,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://awesomeamsterdam.com/wp-content/uploads/2015/10/cafe-plantage.jpg');">
+  <div class="banner-content">
+    <h1>Best restaurants in town</h1>
+  </div>
+</div>
+  <% @restaurants.each do |restaurant| %>
+    <%= restaurant.category.capitalize %>
+    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  <% end %>
+<div>
+  <%= link_to "+ Add a restaurant ", new_restaurant_path%>
+</div>

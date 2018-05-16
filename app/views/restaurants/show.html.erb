@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h2>
+  <p><%= @restaurant.category.capitalize %></p>
+  <p>📍<%= @restaurant.address %></p>
+  <p>📞<%= @restaurant.phone_number %></p>
+  <h2>Reviews </h2>
+ <% @restaurant.reviews.each do |review| %>
+ <ul>
+  <li> <%= review.content.capitalize %> (<%= review.rating %>) </li>
+    </ul>
+  <% end %>
+  <p><%= link_to "✍️ Write a review", new_restaurant_review_path(@restaurant) %></p>
+  <p><%= link_to "🌎 Discover all restaurants", restaurants_path %></p>
+</div>
